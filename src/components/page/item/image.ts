@@ -10,7 +10,7 @@ export class ImageComponent extends BaseComponent<HTMLElement> {
         <div class="image_holder">
           <img class="image_thumbnail" />
         </div>
-        <p class="image_title"></p>
+        <h2 class="image_title"></h2>
       </section>`);
 
     //여기서 사용되는 this.element는 부모클래스인 BaseComponent의 element
