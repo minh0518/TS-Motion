@@ -3,15 +3,14 @@ import { ImageComponent } from './components/page/item/image.js';
 import { NoteComponent } from './components/page/item/note.js';
 import { TodoComponent } from './components/page/item/todo.js';
 import { VideoComponent } from './components/page/item/video.js';
-import { Composable, PageComponent } from './components/page/page.js';
-//자동 import하면 .js가 생략되므로 같이 작성해줍니다
+import { Composable, PageComponent, PageItemComponent } from './components/page/page.js';
 
 class App {
   private readonly page: Component & Composable;
 
   //어플리케이션을 추가할 최상위 루트 요소
   constructor(appRoot: HTMLElement) {
-    this.page = new PageComponent();
+    this.page = new PageComponent(PageItemComponent);
     this.page.attachTo(appRoot);
     // PageComponent가 상속하고 있는 baseComponents의 attachTo() 사용
 
