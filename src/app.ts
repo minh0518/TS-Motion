@@ -4,7 +4,6 @@ import { NoteComponent } from './components/page/item/note.js';
 import { TodoComponent } from './components/page/item/todo.js';
 import { VideoComponent } from './components/page/item/video.js';
 import { Composable, PageComponent, PageItemComponent } from './components/page/page.js';
-//자동 import하면 .js가 생략되므로 같이 작성해줍니다
 
 class App {
   private readonly page: Component & Composable;
