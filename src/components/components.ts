@@ -3,6 +3,7 @@ export interface Component {
   removeFrom(parent: HTMLElement): void;
 }
 
+// 동적으로 추가되는 요소들을 구현하는 클래스들은 BaseComponent를 상속
 export class BaseComponent<T extends HTMLElement> implements Component {
   protected readonly element: T;
 
