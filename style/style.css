@@ -7,13 +7,18 @@
   --border-color: #3f3f3f;
   --shadow-color: #202020;
   --document-bg-color: #68686850;
-  --component-bg-gradient: radial-gradient(circle, #646464e6 0%, #363636e6 100%);
+  --component-bg-gradient: radial-gradient(
+    circle,
+    #646464e6 0%,
+    #363636e6 100%
+  );
   --smokywhite: #dddbd8;
   --black: #000000;
   --translucent-black: #00000099;
 }
 
-ul,li {
+ul,
+li {
   list-style: none;
   padding-left: 0;
 }
@@ -106,4 +111,40 @@ body {
   background: var(--bg-main-color);
   border-top: 1px solid var(--border-color);
   text-align: center;
+}
+
+/* body태그에 추가되는 dialog의 클래스인 .dialog에 스타일링 */
+.dialog {
+  /* 안에 내용들을 중앙 배치 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* 가장 상단에 보이게 (위로 떠오르도록) */
+  z-index: 1;
+
+  /* 브라우저에 가득 찰 수 있게 설정 */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  font-size: 1.2rem;
+  background-color: var(--document-bg-color);
+}
+
+/* .dialog 안에 있는 컨테이너 */
+.dialog_container {
+
+  /* 안에 내용들을 한줄에 하나씩(close버튼과 submit버튼) */
+  display: flex; 
+  flex-direction: column;
+  padding: 0.4em;
+  width: 32em;
+  background: var(--bg-accent-color);
+  background: var(--component-bg-gradient);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 20px var(--shadow-color);
 }
