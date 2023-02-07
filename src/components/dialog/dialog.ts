@@ -3,6 +3,8 @@ import { Composable } from '../page/page.js';
 
 type OnCloseListener = () => void;
 type OnSubmitListener = () => void;
+
+
 export class InputDialog extends BaseComponent<HTMLElement> implements Composable{
   // 멤버변수
   closeListener?: OnCloseListener;
