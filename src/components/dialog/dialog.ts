@@ -5,6 +5,18 @@ type OnCloseListener = () => void;
 type OnSubmitListener = () => void;
 
 
+// 어떤 컴포넌트를 만들던 간에 반드시 
+// 이 인터페이스는 가지고 있어야 함
+export interface MediaData{
+  readonly title:string;
+  readonly url:string;
+}
+export interface TextData{
+  readonly title:string;
+  readonly body:string;
+}
+
+
 export class InputDialog extends BaseComponent<HTMLElement> implements Composable{
   // 멤버변수
   closeListener?: OnCloseListener;
