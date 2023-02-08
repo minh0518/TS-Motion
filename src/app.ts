@@ -1,5 +1,5 @@
 import { Component } from './components/components.js';
-import { InputDialog } from './components/dialog/dialog.js';
+import { InputDialog, MediaData, TextData } from './components/dialog/dialog.js';
 import { MediaSectionInput } from './components/dialog/input/media-input.js';
 import { TextSectionInput } from './components/dialog/input/text-input.js';
 import { ImageComponent } from './components/page/item/image.js';
@@ -12,10 +12,8 @@ import {
   PageItemComponent,
 } from './components/page/page.js';
 
-// InputComponentConstructor타입은
-// 생성자로 아무것도 안 받고 MediaSectionInput|TextSectionInput
-// 를 리턴하는 클래스
-type InputComponentConstructor<T = MediaSectionInput | TextSectionInput> = {
+
+type InputComponentConstructor<T = (MediaData | TextData) & Component > = {
   new (): T;
 };
 
@@ -53,7 +51,7 @@ class App {
 
   // dialog에 입력창과 이벤트리스너(add하면 PageComponent에 추가하고..)를 추가
   // 그리고 버튼에 연결
-  private bindElementToDialog<T extends MediaSectionInput | TextSectionInput>(
+  private bindElementToDialog<T extends (MediaData | TextData) & Component >(
     selector: string, // 1
     InputComponent: InputComponentConstructor<T>, // 2
     makeSection: (input: T) => Component, // 3
